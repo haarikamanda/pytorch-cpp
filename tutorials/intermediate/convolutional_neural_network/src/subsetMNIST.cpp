@@ -138,7 +138,6 @@ torch::Tensor read_images(const std::string& root, bool train) {
   
   // Prepare tensor for the subset
   //auto tensor = torch::empty({count, 1, kImageRows, kImageColumns}, torch::kByte);
-  std::cout<<"This is the size of the sampels"<<count;
  // Define the total number of pixels in one image
 constexpr size_t num_pixels_per_image = kImageRows * kImageColumns;
 
