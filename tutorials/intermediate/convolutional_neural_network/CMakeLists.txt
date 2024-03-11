@@ -10,7 +10,7 @@ target_sources(${EXECUTABLE_NAME} PRIVATE src/main.cpp
                                           src/cifar10.cpp
                                           include/convnet.h
                                           include/cifar10.h
-\)
+)
 
 target_include_directories(${EXECUTABLE_NAME} PRIVATE include)
 
