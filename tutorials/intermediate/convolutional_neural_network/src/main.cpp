@@ -5,7 +5,6 @@
 #include "convnet.h"
 #include "imagefolder_dataset.h"
 #include "cifar10.h"
-#include "subsetMNIST.h"
 
 #include <chrono>
 using dataset::ImageFolderDataset;
