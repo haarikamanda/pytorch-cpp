@@ -30,6 +30,19 @@ class ConvNetImpl : public torch::nn::Module {
         torch::nn::MaxPool2d(torch::nn::MaxPool2dOptions(2).stride(2))
     };
 
+     torch::nn::Sequential layer4{
+        torch::nn::Conv2d(torch::nn::Conv2dOptions(64, 128, 3).stride(1).padding(2)),
+        torch::nn::BatchNorm2d(128),
+        torch::nn::ReLU(),
+        torch::nn::MaxPool2d(torch::nn::MaxPool2dOptions(2).stride(2))
+    };
+    torch::nn::Sequential layer5{
+        torch::nn::Conv2d(torch::nn::Conv2dOptions(128, 256, 3).stride(1).padding(2)),
+        torch::nn::BatchNorm2d(256),
+        torch::nn::ReLU(),
+        torch::nn::MaxPool2d(torch::nn::MaxPool2dOptions(2).stride(2))
+    };
+
     torch::nn::AdaptiveAvgPool2d pool{torch::nn::AdaptiveAvgPool2dOptions({1, 1})};
 
     torch::nn::Linear fc;
