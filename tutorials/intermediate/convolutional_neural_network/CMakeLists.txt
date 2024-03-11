@@ -8,10 +8,8 @@ add_executable(${EXECUTABLE_NAME})
 target_sources(${EXECUTABLE_NAME} PRIVATE src/main.cpp
                                           src/convnet.cpp
                                           src/cifar10.cpp
-                                          src/subsetMNIST.cpp
                                           include/convnet.h
                                           include/cifar10.h
-                                          include/subsetMNIST.h
 )
 
 target_include_directories(${EXECUTABLE_NAME} PRIVATE include)
