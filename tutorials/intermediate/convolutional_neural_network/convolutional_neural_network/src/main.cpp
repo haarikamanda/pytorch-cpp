@@ -5,7 +5,6 @@
 #include "convnet.h"
 #include "imagefolder_dataset.h"
 #include "cifar10.h"
-#include "subsetMNIST.h"
 
 #include <chrono>
 using dataset::ImageFolderDataset;
@@ -81,8 +80,8 @@ int main(int argc,char* argv []) {
     model->to(device);
 
     // Optimizer
-    torch::optim::SGD optimizer(
-        model->parameters(), torch::optim::SGDOptions(learning_rate).weight_decay(weight_decay));
+    torch::optim::Adam optimizer(
+        model->parameters(), torch::optim::AdamOptions(learning_rate).weight_decay(weight_decay));
 
     // Set floating point output precision
     std::cout << std::fixed << std::setprecision(4);
